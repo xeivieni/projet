@@ -11,6 +11,16 @@ public class Reservations {
     public Spectacle spectacle;
     public int IDClient;
 
+    public Reservations(int id, int nbPlacesDT, int nbPlacesPT, int nbPlacesVIP, int IDClient, Spectacle spectacle)
+    {
+        this.id = id;
+        this.nbPlacesDT = nbPlacesDT;
+        this.nbPlacesPT = nbPlacesPT;
+        this.nbPlacesVIP = nbPlacesVIP;
+        this.IDClient = IDClient;
+        this.spectacle = spectacle;
+    }
+
 
     public void setIDClient(int IDClient) {
         this.IDClient = IDClient;
