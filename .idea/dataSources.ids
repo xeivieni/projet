@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - Projet@localhost" uuid="114d8e94-3d8d-47b5-8967-c02b30c103d7">
+    <database-info product="MySQL" version="5.5.42" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <schema name="" catalog="Projet"/>
+    <table name="Clients" schema="" catalog="Projet" type="TABLE">
+      <column name="Nom" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Prenom" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+    </table>
+    <table name="Concert" schema="" catalog="Projet" type="TABLE">
+      <column name="Titre" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Interprete" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Descriptif" sqlType="VARCHAR" precision="140" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="Titre"/>
+    </table>
+    <table name="Resa" schema="" catalog="Projet" type="TABLE">
+      <column name="NbPT" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="NbDT" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="NbVIP" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="Client" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="Spectacle" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ID"/>
+    </table>
+    <table name="Spectacle" schema="" catalog="Projet" type="TABLE">
+      <column name="Date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="Titre" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Salle" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="NbPT" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="NbDT" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="NbVIP" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="Titre"/>
+    </table>
+  </data-source>
+</component>
