@@ -26,7 +26,8 @@ public class DAOSpectacle {
         while (rs.next()){
             String name = rs.getString("nom");
             if (name.equals(nom)){
-                monSpectacle = new Spectacle(new Salle(rs.getInt("Salle")), new Concert(), rs.getDate("Date"), rs.getInt("nbPT"), rs.getInt("nbDT"), rs.getInt("nbVIP"));
+                monSpectacle = new Spectacle(new Salle(rs.getInt("Salle")), new Concert(), rs.getDate("Date"),
+                        rs.getInt("nbPT"), rs.getInt("nbDT"), rs.getInt("nbVIP"));
             }
         }
         return monSpectacle;

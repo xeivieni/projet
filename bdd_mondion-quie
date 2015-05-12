@@ -1,0 +1,97 @@
+-- phpMyAdmin SQL Dump
+-- version 4.4.1.1
+-- http://www.phpmyadmin.net
+--
+-- Client :  localhost:8889
+-- Généré le :  Mar 12 Mai 2015 à 13:29
+-- Version du serveur :  5.5.42
+-- Version de PHP :  5.6.7
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de données :  `Projet`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Clients`
+--
+
+CREATE TABLE `Clients` (
+  `Nom` varchar(30) CHARACTER SET utf8 NOT NULL,
+  `Prenom` varchar(30) CHARACTER SET utf8 NOT NULL,
+  `ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Concert`
+--
+
+CREATE TABLE `Concert` (
+  `Titre` varchar(30) NOT NULL,
+  `Interprete` varchar(30) NOT NULL,
+  `Descriptif` varchar(140) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Resa`
+--
+
+CREATE TABLE `Resa` (
+  `NbPT` int(11) NOT NULL,
+  `NbDT` int(11) NOT NULL,
+  `NbVIP` int(11) NOT NULL,
+  `ID` int(11) NOT NULL,
+  `Client` int(11) NOT NULL,
+  `Spectacle` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Spectacle`
+--
+
+CREATE TABLE `Spectacle` (
+  `Date` date NOT NULL,
+  `Titre` varchar(30) CHARACTER SET utf8 NOT NULL,
+  `Salle` int(11) NOT NULL,
+  `NbPT` int(11) NOT NULL,
+  `NbDT` int(11) NOT NULL,
+  `NbVIP` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `Clients`
+--
+ALTER TABLE `Clients`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Index pour la table `Concert`
+--
+ALTER TABLE `Concert`
+  ADD PRIMARY KEY (`Titre`);
+
+--
+-- Index pour la table `Resa`
+--
+ALTER TABLE `Resa`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Index pour la table `Spectacle`
+--
+ALTER TABLE `Spectacle`
+  ADD PRIMARY KEY (`Titre`);
