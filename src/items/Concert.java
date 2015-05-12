@@ -8,6 +8,12 @@ public class Concert {
     private String interprete;
     public String descriptif;
 
+    public Concert(String title, String singer, String description){
+        this.titre = title;
+        this.interprete = singer;
+        this.descriptif = description;
+    }
+
     public void setDescriptif(String descriptif) {
         this.descriptif = descriptif;
     }

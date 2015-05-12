@@ -6,35 +6,36 @@ import items.Spectacle;
 
 import java.sql.*;
 
-
-public class DAOSpectacle {
+/**
+ * Created by clementmondion on 12/05/15.
+ */
+public class DAOConcert {
     Connexion db;
     Connection dbcon;
 
-    public DAOSpectacle() throws SQLException, ClassNotFoundException {
+    public DAOConcert() throws SQLException, ClassNotFoundException {
         this.db = new Connexion("root", "root", "jdbc:mysql://localhost:8889/projet", "com.mysql.jdbc.Driver");
         this.dbcon = this.db.getConnexion();
     }
 
-    public Spectacle retrieve(String nom) throws SQLException{
+    public Concert retrieve(String titre) throws SQLException{
         int flag = 0;
-        String rqst = "SELECT * FROM Spectacle";
+        String rqst = "SELECT * FROM Concert";
         Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
-        Spectacle monSpectacle = null;
+        Concert monConcert = null;
         while (rs.next()){
-            String name = rs.getString("nom");
-            if (name.equals(nom)){
-                monSpectacle = new Spectacle(new Salle(rs.getInt("Salle")), new Concert(), rs.getDate("Date"),
-                        rs.getInt("nbPT"), rs.getInt("nbDT"), rs.getInt("nbVIP"));
+            String titre1 = rs.getString("Titre");
+            if (titre1.equals(titre)){
+                monConcert = new Concert(rs.getString("Titre"), rs.getString("Interprete"), rs.getString("Descriptif"));
             }
         }
-        return monSpectacle;
+        return monConcert;
     }
 
-    public void create(Spectacle spectacle) throws SQLException{
-        String rqst = "SELECT * FROM Spectacle";
+    public void create(Concert concert) throws SQLException{
+        String rqst = "SELECT * FROM Concert";
         Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
@@ -49,14 +50,14 @@ public class DAOSpectacle {
             }
         }
         /* Exécution d'une requête d'écriture */
-        int xU = stmt.executeUpdate("INSERT INTO Spectacle " +
+        int xU = stmt.executeUpdate("INSERT INTO Concert " +
                 "(Date, Titre, Salle, NbPT, NbDT, NbVIP) VALUES " +
                 "(" + spectacle.getDate() + "," + spectacle.getConcert().getTitre() + "," + spectacle.getSalle()+ ","
                 + spectacle.getNbPlacesPT()+ "," + spectacle.getNbPlacesDT()+ "," + spectacle.getNbPlacesVIP() + ");");
     }
 
     public void update(Spectacle spectacle) throws SQLException{
-        String rqst = "SELECT * FROM Spectacle";
+        String rqst = "SELECT * FROM Concert";
         Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
@@ -81,7 +82,7 @@ public class DAOSpectacle {
     }
 
     public void delete(Spectacle spectacle) throws SQLException{
-        String query = "DELETE FROM Spectacle WHERE Titre = ?";
+        String query = "DELETE FROM Concert WHERE Titre = ?";
         PreparedStatement preparedStmt = dbcon.prepareStatement(query);
         preparedStmt.setString(1, spectacle.getConcert().getTitre());
 
