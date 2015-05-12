@@ -2,9 +2,7 @@ package items;
 
 import java.util.Date;
 
-/**
- * Created by clementmondion on 12/05/15.
- */
+
 public class Spectacle {
     public Salle salle;
     public Concert concert;
@@ -22,6 +20,18 @@ public class Spectacle {
         this.nbPlacesVIP = VIP;
     }
 
+    public void setNbPlacesDT(int nbPlacesDT) {
+        this.nbPlacesDT = nbPlacesDT;
+    }
+
+    public void setNbPlacesPT(int nbPlacesPT) {
+        this.nbPlacesPT = nbPlacesPT;
+    }
+
+    public void setNbPlacesVIP(int nbPlacesVIP) {
+        this.nbPlacesVIP = nbPlacesVIP;
+    }
+
     public void setConcert(Concert concert) {
         this.concert = concert;
     }
@@ -32,6 +42,18 @@ public class Spectacle {
 
     public void setSalle(Salle salle) {
         this.salle = salle;
+    }
+
+    public int getNbPlacesDT() {
+        return nbPlacesDT;
+    }
+
+    public int getNbPlacesPT() {
+        return nbPlacesPT;
+    }
+
+    public int getNbPlacesVIP() {
+        return nbPlacesVIP;
     }
 
     public Concert getConcert() {

@@ -34,7 +34,7 @@ public class DAOSpectacle {
     }
 
     public void create(Spectacle spectacle) throws SQLException{
-        String rqst = "SELECT * FROM personne";
+        String rqst = "SELECT * FROM Spectacle";
         Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
@@ -49,30 +49,41 @@ public class DAOSpectacle {
             }
         }
         /* Exécution d'une requête d'écriture */
-        int xU = stmt.executeUpdate("INSERT INTO Clients (Nom, Prenom, ID) VALUES (" + client.getNom() + "," + client.getPrenom() + "," + client.getId() + ");");
+        int xU = stmt.executeUpdate("INSERT INTO Spectacle " +
+                "(Date, Titre, Salle, NbPT, NbDT, NbVIP) VALUES " +
+                "(" + spectacle.getDate() + "," + spectacle.getConcert().getTitre() + "," + spectacle.getSalle()+ ","
+                + spectacle.getNbPlacesPT()+ "," + spectacle.getNbPlacesDT()+ "," + spectacle.getNbPlacesVIP() + ");");
     }
 
-    public void update(Client client) throws SQLException{
-        String rqst = "SELECT * FROM personne";
+    public void update(Spectacle spectacle) throws SQLException{
+        String rqst = "SELECT * FROM Spectacle";
         Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
         while (rs.next()){
-            String name = rs.getString("Nom");
-            String surname = rs.getString("Prenom");
-            int age = rs.getInt("ID");
-            if (name.equals(client.getNom()) || surname.equals(client.getPrenom()) || age == client.getId()){
-                rs.updateString("Nom", client.getNom());
-                rs.updateString("Prenom", client.getPrenom());
-                rs.updateInt("ID", client.getId());
+            String titre = rs.getString("Titre");
+            String date = rs.getString("Date");
+            int salle = rs.getInt("Salle");
+            int nbPT = rs.getInt("NbPT");
+            int nbDT = rs.getInt("NbDT");
+            int nbVIP = rs.getInt("NbVIP");
+            if (titre.equals(spectacle.getConcert().getTitre()) || date.equals(spectacle.getDate().toString())
+                    || salle == spectacle.getSalle().getNumero() || nbDT == spectacle.getNbPlacesDT() ||
+                    nbPT == spectacle.getNbPlacesPT() || nbVIP == spectacle.nbPlacesVIP){
+                rs.updateString("Titre", spectacle.getConcert().getTitre());
+                rs.updateString("Date", spectacle.getDate().toString());
+                rs.updateInt("Salle", spectacle.getSalle().getNumero());
+                rs.updateInt("NbPT", spectacle.getNbPlacesPT());
+                rs.updateInt("NbDT", spectacle.getNbPlacesDT());
+                rs.updateInt("NbVIP", spectacle.getNbPlacesVIP());
             }
         }
     }
 
-    public void delete(Client client) throws SQLException{
-        String query = "DELETE FROM personne WHERE Prenom = ?";
+    public void delete(Spectacle spectacle) throws SQLException{
+        String query = "DELETE FROM Spectacle WHERE Titre = ?";
         PreparedStatement preparedStmt = dbcon.prepareStatement(query);
-        preparedStmt.setString(1, client.getPrenom());
+        preparedStmt.setString(1, spectacle.getConcert().getTitre());
 
         // execute the preparedstatement
         preparedStmt.execute();

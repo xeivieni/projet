@@ -16,4 +16,20 @@ public class Salle {
             this.capacite = 75;
         }
     }
+
+    public int getCapacite() {
+        return capacite;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setCapacite(int capacite) {
+        this.capacite = capacite;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
 }

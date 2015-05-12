@@ -16,7 +16,7 @@ public class DAOClient {
 
     public Client retrieve(String nom) throws SQLException{
         int flag = 0;
-        String rqst = "SELECT * FROM personne";
+        String rqst = "SELECT * FROM Clients";
         Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
@@ -31,7 +31,7 @@ public class DAOClient {
     }
 
     public void create(Client client) throws SQLException{
-        String rqst = "SELECT * FROM personne";
+        String rqst = "SELECT * FROM Clients";
         Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
@@ -50,7 +50,7 @@ public class DAOClient {
     }
 
     public void update(Client client) throws SQLException{
-        String rqst = "SELECT * FROM personne";
+        String rqst = "SELECT * FROM Clients";
         Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
@@ -67,9 +67,9 @@ public class DAOClient {
     }
 
     public void delete(Client client) throws SQLException{
-        String query = "DELETE FROM personne WHERE Prenom = ?";
+        String query = "DELETE FROM Clients WHERE ID = ?";
         PreparedStatement preparedStmt = dbcon.prepareStatement(query);
-        preparedStmt.setString(1, client.getPrenom());
+        preparedStmt.setInt(1, client.getId());
 
         // execute the preparedstatement
         preparedStmt.execute();
