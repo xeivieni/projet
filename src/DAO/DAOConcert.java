@@ -1,14 +1,9 @@
 package DAO;
 
 import items.Concert;
-import items.Salle;
-import items.Spectacle;
-
 import java.sql.*;
+import java.util.ArrayList;
 
-/**
- * Created by clementmondion on 12/05/15.
- */
 public class DAOConcert {
     Connexion db;
     Connection dbcon;
@@ -40,54 +35,60 @@ public class DAOConcert {
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
         while (rs.next()){
-            String name = rs.getString("Nom");
-            String surname = rs.getString("Prenom");
-            int age = rs.getInt("ID");
-            System.out.println(name +" "+ surname +" "+ age);
-            if (name.equals(client.getNom()) && surname.equals(client.getPrenom()) && age == client.getId()){
+            String titre = rs.getString("Titre");
+            String interprete = rs.getString("Interprete");
+            String descriptif = rs.getString("Descriptif");
+            if (titre.equals(concert.getTitre()) && interprete.equals(concert.getInterprete()) && descriptif.equals(concert.getDescriptif())){
                 System.out.println("Le client demandé existe déjà dans la base de donnée");
                 return;
             }
         }
         /* Exécution d'une requête d'écriture */
         int xU = stmt.executeUpdate("INSERT INTO Concert " +
-                "(Date, Titre, Salle, NbPT, NbDT, NbVIP) VALUES " +
-                "(" + spectacle.getDate() + "," + spectacle.getConcert().getTitre() + "," + spectacle.getSalle()+ ","
-                + spectacle.getNbPlacesPT()+ "," + spectacle.getNbPlacesDT()+ "," + spectacle.getNbPlacesVIP() + ");");
+                "(Titre, Interprete, Descriptif) VALUES " +
+                "(" + concert.getTitre() + "," + concert.getInterprete() + "," + concert.getDescriptif() + ");");
     }
 
-    public void update(Spectacle spectacle) throws SQLException{
+    public void update(Concert concert) throws SQLException{
         String rqst = "SELECT * FROM Concert";
         Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
         while (rs.next()){
             String titre = rs.getString("Titre");
-            String date = rs.getString("Date");
-            int salle = rs.getInt("Salle");
-            int nbPT = rs.getInt("NbPT");
-            int nbDT = rs.getInt("NbDT");
-            int nbVIP = rs.getInt("NbVIP");
-            if (titre.equals(spectacle.getConcert().getTitre()) || date.equals(spectacle.getDate().toString())
-                    || salle == spectacle.getSalle().getNumero() || nbDT == spectacle.getNbPlacesDT() ||
-                    nbPT == spectacle.getNbPlacesPT() || nbVIP == spectacle.nbPlacesVIP){
-                rs.updateString("Titre", spectacle.getConcert().getTitre());
-                rs.updateString("Date", spectacle.getDate().toString());
-                rs.updateInt("Salle", spectacle.getSalle().getNumero());
-                rs.updateInt("NbPT", spectacle.getNbPlacesPT());
-                rs.updateInt("NbDT", spectacle.getNbPlacesDT());
-                rs.updateInt("NbVIP", spectacle.getNbPlacesVIP());
+            String interprete = rs.getString("Interprete");
+            String descriptif = rs.getString("Descriptif");
+            if (titre.equals(concert.getTitre()) || interprete.equals(concert.getInterprete())
+                    || descriptif.equals(concert.getDescriptif())){
+                rs.updateString("Titre", concert.getTitre());
+                rs.updateString("Interprete", concert.getInterprete());
+                rs.updateString("Descriptif", concert.getDescriptif());
             }
         }
     }
 
-    public void delete(Spectacle spectacle) throws SQLException{
+    public void delete(Concert concert) throws SQLException{
         String query = "DELETE FROM Concert WHERE Titre = ?";
         PreparedStatement preparedStmt = dbcon.prepareStatement(query);
-        preparedStmt.setString(1, spectacle.getConcert().getTitre());
+        preparedStmt.setString(1, concert.getTitre());
 
         // execute the preparedstatement
         preparedStmt.execute();
+    }
+
+
+
+    public ArrayList<Concert> findAll() throws Exception {
+        ArrayList<Concert> R = new ArrayList<Concert>();
+
+        String rqst = "SELECT * FROM Concert";
+        Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        ResultSet rs;
+        rs = stmt.executeQuery(rqst);
+        while (rs.next()){
+            R.add((Concert)rs);
+        }
+        return R;
     }
 
 }

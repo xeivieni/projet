@@ -1,8 +1,8 @@
 package DAO;
 
 import items.Client;
-
 import java.sql.*;
+import java.util.ArrayList;
 
 
 public class DAOClient {
@@ -73,6 +73,20 @@ public class DAOClient {
 
         // execute the preparedstatement
         preparedStmt.execute();
+    }
+
+
+    public ArrayList<Client> findAll() throws Exception {
+        ArrayList<Client> R = new ArrayList<Client>();
+
+        String rqst = "SELECT * FROM Clients";
+        Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        ResultSet rs;
+        rs = stmt.executeQuery(rqst);
+        while (rs.next()){
+            R.add((Client)rs);
+        }
+        return R;
     }
 
 }

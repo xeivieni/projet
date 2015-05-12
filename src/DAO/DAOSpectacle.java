@@ -1,10 +1,12 @@
 package DAO;
 
 import items.Concert;
+import items.Reservations;
 import items.Salle;
 import items.Spectacle;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 
 public class DAOSpectacle {
@@ -89,4 +91,18 @@ public class DAOSpectacle {
         preparedStmt.execute();
     }
 
+
+
+    public ArrayList<Spectacle> findAll() throws Exception {
+        ArrayList<Spectacle> R = new ArrayList<Spectacle>();
+
+        String rqst = "SELECT * FROM Resa";
+        Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        ResultSet rs;
+        rs = stmt.executeQuery(rqst);
+        while (rs.next()){
+            R.add((Spectacle)rs);
+        }
+        return R;
+    }
 }
