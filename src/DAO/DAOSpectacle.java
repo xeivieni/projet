@@ -1,5 +1,7 @@
 package DAO;
 
+import items.Concert;
+import items.Salle;
 import items.Spectacle;
 
 import java.sql.*;
@@ -24,7 +26,7 @@ public class DAOSpectacle {
         while (rs.next()){
             String name = rs.getString("nom");
             if (name.equals(nom)){
-                monSpectacle = new Spectacle(rs.getString("Nom"), rs.getString("Prenom"), rs.getInt("ID"));
+                monSpectacle = new Spectacle(new Salle(rs.getInt("Salle")), new Concert(), rs.getDate("Date"), rs.getInt("nbPT"), rs.getInt("nbDT"), rs.getInt("nbVIP"));
             }
         }
         return monSpectacle;
