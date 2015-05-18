@@ -28,7 +28,10 @@ public class DAOResa {
             }
         }
         /* Exécution d'une requête d'écriture */
-        int xU = stmt.executeUpdate("INSERT INTO Resa (NbPT, NbDT, NbVIP, ID, Client, Spectacle) VALUES (" + resa.getNbPlacesPT() + "," + resa.getNbPlacesDT() + "," + resa.getNbPlacesVIP() + "," + resa.getId() + "," + resa.getIDClient() + "," + resa.getSpectacle().getConcert().getTitre() +  ");");
+        int xU = stmt.executeUpdate("INSERT INTO `Resa` (`NbPT`, `NbDT`,`NbVIP`, `ID`, `Client`, `Spectacle`) " +
+                "VALUES (\"" + resa.getNbPlacesPT() + "\",\"" + resa.getNbPlacesDT() + "\",\"" + resa.getNbPlacesVIP()
+                + "\",\"" + resa.getId() + "\",\"" + resa.getIDClient() + "\",\"" +
+                resa.getSpectacle().getConcert().getTitre() +  "\");");
     }
 
     public Reservations retrieve(int ID) throws SQLException, ClassNotFoundException {

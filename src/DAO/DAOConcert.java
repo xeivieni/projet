@@ -44,9 +44,9 @@ public class DAOConcert {
             }
         }
         /* Exécution d'une requête d'écriture */
-        int xU = stmt.executeUpdate("INSERT INTO Concert " +
-                "(Titre, Interprete, Descriptif) VALUES " +
-                "(" + concert.getTitre() + "," + concert.getInterprete() + "," + concert.getDescriptif() + ");");
+        int xU = stmt.executeUpdate("INSERT INTO `Concert`" +
+        "(`Titre`, `Interprete`, `Descriptif`) VALUES " +
+                "(\"" + concert.getTitre() + "\",\"" + concert.getInterprete() + "\",\"" + concert.getDescriptif() + "\");");
     }
 
     public void update(Concert concert) throws SQLException{

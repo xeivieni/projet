@@ -6,7 +6,7 @@ import items.Salle;
 import items.Spectacle;
 
 import java.sql.*;
-import java.util.ArrayList;
+import java.util.*;
 
 
 public class DAOSpectacle {
@@ -18,17 +18,18 @@ public class DAOSpectacle {
         this.dbcon = this.db.getConnexion();
     }
 
-    public Spectacle retrieve(String nom) throws SQLException{
+    public Spectacle retrieve(String nom) throws SQLException, ClassNotFoundException {
         int flag = 0;
         String rqst = "SELECT * FROM Spectacle";
         Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
         Spectacle monSpectacle = null;
+        DAOConcert monDAOConcert = new DAOConcert();
         while (rs.next()){
             String name = rs.getString("nom");
             if (name.equals(nom)){
-                monSpectacle = new Spectacle(new Salle(rs.getInt("Salle")), new Concert(), rs.getDate("Date"),
+                monSpectacle = new Spectacle(new Salle(rs.getInt("Salle")), monDAOConcert.retrieve(nom), rs.getDate("Date"),
                         rs.getInt("nbPT"), rs.getInt("nbDT"), rs.getInt("nbVIP"));
             }
         }
@@ -40,21 +41,26 @@ public class DAOSpectacle {
         Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
-        while (rs.next()){
-            String name = rs.getString("Nom");
-            String surname = rs.getString("Prenom");
-            int age = rs.getInt("ID");
-            System.out.println(name +" "+ surname +" "+ age);
-            if (name.equals(client.getNom()) && surname.equals(client.getPrenom()) && age == client.getId()){
-                System.out.println("Le client demandé existe déjà dans la base de donnée");
+        /*while (rs.next()){
+            java.sql.Date date = rs.getDate("Date");
+            String titre = rs.getString("Titre");
+            int salle = rs.getInt("Salle");
+            int PT = rs.getInt("NbPT");
+            int DT = rs.getInt("NbDT");
+            int VIP = rs.getInt("NbVIP");
+            if (date.equals(spectacle.getDate()) && titre.equals(spectacle.getConcert().getTitre())
+                    && salle == spectacle.getSalle().getNumero() && PT == spectacle.getNbPlacesPT() && DT == spectacle.getNbPlacesDT() && VIP == spectacle.getNbPlacesVIP()){
+                System.out.println("Le spectacle demandé existe déjà dans la base de donnée");
                 return;
             }
-        }
+        }*/
         /* Exécution d'une requête d'écriture */
-        int xU = stmt.executeUpdate("INSERT INTO Spectacle " +
-                "(Date, Titre, Salle, NbPT, NbDT, NbVIP) VALUES " +
-                "(" + spectacle.getDate() + "," + spectacle.getConcert().getTitre() + "," + spectacle.getSalle()+ ","
-                + spectacle.getNbPlacesPT()+ "," + spectacle.getNbPlacesDT()+ "," + spectacle.getNbPlacesVIP() + ");");
+        String statement = ("INSERT INTO `Spectacle` " +
+                "(`Date`, `Titre`, `Salle`, `NbPT`, `NbDT`, `NbVIP`) VALUES " +
+                "('2015-04-20',\"" + spectacle.getConcert().getTitre() + "\",\"" + spectacle.getSalle().getNumero() + "\",\""
+                + spectacle.getNbPlacesPT() + "\",\"" + spectacle.getNbPlacesDT() + "\",\"" + spectacle.getNbPlacesVIP() + "\");");
+        System.out.println(statement);
+        int xU = stmt.executeUpdate(statement);
     }
 
     public void update(Spectacle spectacle) throws SQLException{
@@ -96,7 +102,7 @@ public class DAOSpectacle {
     public ArrayList<Spectacle> findAll() throws Exception {
         ArrayList<Spectacle> R = new ArrayList<Spectacle>();
 
-        String rqst = "SELECT * FROM Resa";
+        String rqst = "SELECT * FROM Spectacle";
         Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs;
         rs = stmt.executeQuery(rqst);

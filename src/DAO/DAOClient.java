@@ -46,7 +46,8 @@ public class DAOClient {
             }
         }
         /* Exécution d'une requête d'écriture */
-        int xU = stmt.executeUpdate("INSERT INTO Clients (Nom, Prenom, ID) VALUES (" + client.getNom() + "," + client.getPrenom() + "," + client.getId() + ");");
+        int xU = stmt.executeUpdate("INSERT INTO `Clients` (`Nom`, `Prenom`, `ID`) VALUES " +
+                "(\"" + client.getNom() + "\",\"" + client.getPrenom() + "\",\"" + client.getId() + "\");");
     }
 
     public void update(Client client) throws SQLException{
