@@ -80,7 +80,7 @@
 </div>
 
 
-<%-- <%
+<%
 
 
   try {
@@ -105,6 +105,6 @@
     out.print("Aie aie aie2");
   }
 
-%> --%>
+%>
 </body>
 </html>
