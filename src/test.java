@@ -1,4 +1,5 @@
 import DAO.*;
+import com.sun.jmx.snmp.internal.SnmpSubSystem;
 import items.*;
 
 import java.sql.SQLException;
@@ -17,11 +18,14 @@ public class test {
         DAOConcert daoconcert1 = new DAOConcert();
         ArrayList<Concert> myvar = daoconcert1.findAll();
         System.out.print(myvar);
-        //DAOSpectacle daospectacle1 = new DAOSpectacle();
-        //daospectacle1.create(show1);
-        DAOClient daoclient1 = new DAOClient();
-        daoclient1.create(testclient);
-        DAOResa daoresa1 = new DAOResa();
-        daoresa1.create(resa1);
+        DAOSpectacle daospectacle1 = new DAOSpectacle();
+        ArrayList<Spectacle> arrayspec = daospectacle1.findAll();
+        for (Spectacle value : arrayspec){
+            System.out.println(value);
+        }
+        //DAOClient daoclient1 = new DAOClient();
+        //daoclient1.create(testclient);
+        //DAOResa daoresa1 = new DAOResa();
+        //daoresa1.create(resa1);
     }
 }

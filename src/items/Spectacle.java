@@ -1,7 +1,5 @@
 package items;
 
-import java.util.Date;
-
 
 public class Spectacle {
     public Salle salle;
