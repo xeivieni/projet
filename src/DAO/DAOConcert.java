@@ -76,8 +76,6 @@ public class DAOConcert {
         preparedStmt.execute();
     }
 
-
-
     public ArrayList<Concert> findAll() throws Exception {
         ArrayList<Concert> R = new ArrayList<Concert>();
 
@@ -86,7 +84,8 @@ public class DAOConcert {
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
         while (rs.next()){
-            R.add((Concert)rs);
+            Concert live = new Concert(rs.getString("Titre"), rs.getString("Interprete"), rs.getString("Descriptif"));
+            R.add(live);
         }
         return R;
     }

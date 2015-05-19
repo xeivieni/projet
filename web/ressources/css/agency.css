@@ -265,7 +265,7 @@ header {
     text-align: center;
     color: #fff;
     background-position: center;
-    background-image: url(ressources/img/back.jpg) none;
+    background-image: url(/ressources/img/back.jpg) none;
     background-attachment: scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
