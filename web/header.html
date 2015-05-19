@@ -12,7 +12,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Bootstrap -->
-    <link href="ressources/css/agency.css" rel="stylesheet">
+    <!--<link href="ressources/css/agency.css" rel="stylesheet">-->
     <link href="ressources/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,7 +23,7 @@
     <![endif]-->
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -40,7 +40,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="authentification.jsp">Accueil<span class="sr-only">(current)</span></a></li>
+                <li class="button"><a href="authentification.jsp">Accueil<span class="sr-only">(current)</span></a></li>
                 <li class="button"><a href="concert.jsp">Concerts</a></li>
             </ul>
             <form class="navbar-form navbar-right" role="search">
@@ -57,7 +57,7 @@
                         <li><a href="authentification.jsp">Client</a></li>
                         <li><a href="admin.jsp">Admin</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">Nouveau client</a></li>
+                        <li><a href="#new" data-toggle="modal">Nouveau client</a></li>
                     </ul>
                 </li>
             </ul>
@@ -66,6 +66,18 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
+<div class="modal fade" id="new" role="dialog">
+     <div class="modal-dialog">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <div class="container">
+                     <h4>Coucoucoucoucou</h4>
+                 </div><!-- /container -->
+             </div>
+         </div>
+     </div>
+</div>
+
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -73,5 +85,7 @@
 <script src="ressources/js/bootstrap.min.js"></script>
 <script src="ressources/js/agency.js"></script>
 <script src="ressources/js/jquery.js"></script>
+
+
 </body>
 </html>

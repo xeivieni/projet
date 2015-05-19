@@ -19,7 +19,7 @@
 <body>
 <%
 
-  out.print("\n\n\n\n\n\n\n\n\n\n\nCoucoucoucoucouocuocuou petit pd");
+
   try {
     DAOConcert lives = new DAOConcert();
     ArrayList<Concert> live_list = new ArrayList<Concert>();
@@ -28,10 +28,8 @@
     } catch (Exception e) {
       e.printStackTrace();
     }
-    out.print("\n\n\n\n\n\n\n\nViens tu t'afficheeeeeeeeeeeee");
 
-    for (int i = 0; i < live_list.size(); i++) {
-      Concert value = live_list.get(i);
+    for (Concert value : live_list) {
       out.println(value.getTitre());
       out.println(value.getInterprete());
       out.println(value.getDescriptif());

@@ -23,6 +23,5 @@ public class test {
         daoclient1.create(testclient);
         DAOResa daoresa1 = new DAOResa();
         daoresa1.create(resa1);
-
     }
 }
