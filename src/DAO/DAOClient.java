@@ -85,7 +85,8 @@ public class DAOClient {
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
         while (rs.next()){
-            R.add((Client)rs);
+            Client cust = new Client(rs.getString("Nom"), rs.getString("Prenom"), rs.getInt("ID"));
+            R.add(cust);
         }
         return R;
     }

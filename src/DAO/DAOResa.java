@@ -1,5 +1,7 @@
 package DAO;
 import items.Reservations;
+import items.Salle;
+import items.Spectacle;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,7 +11,7 @@ public class DAOResa {
     Connexion db;
     Connection dbcon;
     public DAOResa() throws SQLException, ClassNotFoundException {
-        this.db = new Connexion("root", "root", "jdbc:mysql://localhost:8889/TP9", "com.mysql.jdbc.Driver");
+        this.db = new Connexion("root", "root", "jdbc:mysql://localhost:8889/Projet", "com.mysql.jdbc.Driver");
         this.dbcon = this.db.getConnexion();
     }
 
@@ -96,7 +98,10 @@ public class DAOResa {
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
         while (rs.next()){
-            R.add((Reservations)rs);
+            DAOSpectacle spe_from_titre = new DAOSpectacle();
+            Spectacle my_spectacle = spe_from_titre.retrieve(rs.getString("Spectacle"));
+            Reservations resa = new Reservations(rs.getInt("ID"), rs.getInt("NbPT"), rs.getInt("NbDT"),rs.getInt("NbVIP"), rs.getInt("Client"), my_spectacle);
+            R.add(resa);
         }
         return R;
     }
