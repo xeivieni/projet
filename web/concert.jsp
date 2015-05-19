@@ -35,11 +35,11 @@
       <div class="col-md-5 iPhone-features" style="margin-left:-25px;">
         <%--<ul class="top-features">--%>
           <div align="left">
-           <p><u><H2>Scène 1</H2></u></p><br>
+           <p><u><H2>Salle 1</H2></u></p><br>
 
             <li>
               <span><i class="fa fa-random simple_bg top-features-bg"></i></span>
-              <p><strong>Jour 1</strong><br>
+              <p><strong>Jour 1 - <i>01/06/2015</i></strong><br><br>
                 <%
                   try {
                     DAOConcert lives = new DAOConcert();
@@ -57,11 +57,23 @@
                     }
 
                     for (Concert value : live_list) {
-                      out.println(value.getTitre());
-                      out.println(value.getInterprete());
-                      out.println(value.getDescriptif());%>
-                <br>
-                <%
+                      for(Spectacle value2 : spectacle)
+                      {
+                        if(value2.getConcert().getTitre().equals(value.getTitre())) {
+                          if (value2.getSalle().getNumero() == 0) {
+                            if(value2.getDate().equals("2015-06-01"))
+                            {
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+
+
+                          }
+                        }
+                      }
                     }
 
 
@@ -74,27 +86,44 @@
                   }
 
                 %>
+                <br>
               </p>
             </li>
             <li>
               <span><i class="fa fa-cogs simple_bg top-features-bg"></i></span>
-              <p><strong>Jour 2</strong><br>
+              <p><strong>Jour 2 - <i>02/06/2015</i></strong><br><br>
                 <%
                   try {
                     DAOConcert lives = new DAOConcert();
                     ArrayList<Concert> live_list = new ArrayList<Concert>();
+
+
+                    DAOSpectacle Spec = new DAOSpectacle();
+                    ArrayList<Spectacle> spectacle = new ArrayList<Spectacle>();
+
                     try {
                       live_list = lives.findAll();
+                      spectacle = Spec.findAll();
                     } catch (Exception e) {
                       e.printStackTrace();
                     }
 
                     for (Concert value : live_list) {
-                      out.println(value.getTitre());
-                      out.println(value.getInterprete());
-                      out.println(value.getDescriptif());%>
-                <br>
-                <%
+                      for(Spectacle value2 : spectacle)
+                      {
+                        if(value2.getConcert().getTitre().equals(value.getTitre())) {
+                          if (value2.getSalle().getNumero() == 0) {
+                            if(value2.getDate().equals("2015-06-02")) {
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+
+                          }
+                        }
+                      }
                     }
 
 
@@ -107,27 +136,44 @@
                   }
 
                 %>
+                <br>
               </p>
             </li>
             <li>
               <span><i class="fa fa-check simple_bg top-features-bg"></i></span>
-              <p><strong>Jour 3</strong><br>
+              <p><strong>Jour 3 - <i>03/06/2015</i></strong><br><br>
                 <%
                   try {
                     DAOConcert lives = new DAOConcert();
                     ArrayList<Concert> live_list = new ArrayList<Concert>();
+
+
+                    DAOSpectacle Spec = new DAOSpectacle();
+                    ArrayList<Spectacle> spectacle = new ArrayList<Spectacle>();
+
                     try {
                       live_list = lives.findAll();
+                      spectacle = Spec.findAll();
                     } catch (Exception e) {
                       e.printStackTrace();
                     }
 
                     for (Concert value : live_list) {
-                      out.println(value.getTitre());
-                      out.println(value.getInterprete());
-                      out.println(value.getDescriptif());%>
-                <br>
-                <%
+                      for(Spectacle value2 : spectacle)
+                      {
+                        if(value2.getConcert().getTitre().equals(value.getTitre())) {
+                          if (value2.getSalle().getNumero() == 0) {
+                            if(value2.getDate().equals("2015-06-03")) {
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+
+                          }
+                        }
+                      }
                     }
 
 
@@ -140,6 +186,7 @@
                   }
 
                 %>
+                <br>
               </p>
             </li>
           </div>
@@ -153,27 +200,43 @@
       <div class="col-md-5 iPhone-features" style="margin-right:-25px;">
         <%--<ul class="top-features">--%>
           <div align="right">
-            <p><u><H2>Scène 2</H2></u></p><br>
+            <p><u><H2>Salle 2</H2></u></p><br>
 
             <li>
               <span><i class="fa fa-random simple_bg top-features-bg"></i></span>
-              <p><strong>Jour 1</strong><br>
+              <p><strong>Jour 1 - <i>01/06/2015</i></strong><br><br>
                 <%
                   try {
                     DAOConcert lives = new DAOConcert();
                     ArrayList<Concert> live_list = new ArrayList<Concert>();
+
+
+                    DAOSpectacle Spec = new DAOSpectacle();
+                    ArrayList<Spectacle> spectacle = new ArrayList<Spectacle>();
+
                     try {
                       live_list = lives.findAll();
+                      spectacle = Spec.findAll();
                     } catch (Exception e) {
                       e.printStackTrace();
                     }
 
                     for (Concert value : live_list) {
-                      out.println(value.getTitre());
-                      out.println(value.getInterprete());
-                      out.println(value.getDescriptif());%>
-                <br>
-                <%
+                      for(Spectacle value2 : spectacle)
+                      {
+                        if(value2.getConcert().getTitre().equals(value.getTitre())) {
+                          if (value2.getSalle().getNumero() == 1) {
+                            if(value2.getDate().equals("2015-06-01")) {
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+
+                          }
+                        }
+                      }
                     }
 
 
@@ -186,27 +249,44 @@
                   }
 
                 %>
+                <br>
               </p>
             </li>
             <li>
               <span><i class="fa fa-cogs simple_bg top-features-bg"></i></span>
-              <p><strong>Jour 2</strong><br>
+              <p><strong>Jour 2 - <i>02/06/2015</i></strong><br><br>
                 <%
                   try {
                     DAOConcert lives = new DAOConcert();
                     ArrayList<Concert> live_list = new ArrayList<Concert>();
+
+
+                    DAOSpectacle Spec = new DAOSpectacle();
+                    ArrayList<Spectacle> spectacle = new ArrayList<Spectacle>();
+
                     try {
                       live_list = lives.findAll();
+                      spectacle = Spec.findAll();
                     } catch (Exception e) {
                       e.printStackTrace();
                     }
 
                     for (Concert value : live_list) {
-                      out.println(value.getTitre());
-                      out.println(value.getInterprete());
-                      out.println(value.getDescriptif());%>
-                <br>
-                <%
+                      for(Spectacle value2 : spectacle)
+                      {
+                        if(value2.getConcert().getTitre().equals(value.getTitre())) {
+                          if (value2.getSalle().getNumero() == 1) {
+                            if(value2.getDate().equals("2015-06-02")) {
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+
+                          }
+                        }
+                      }
                     }
 
 
@@ -219,27 +299,43 @@
                   }
 
                 %>
+                <br>
               </p>
             </li>
             <li>
               <span><i class="fa fa-check simple_bg top-features-bg"></i></span>
-              <p><strong>Jour 3</strong><br>
+              <p><strong>Jour 3 - <i>03/06/2015</i></strong><br><br>
                 <%
                   try {
                     DAOConcert lives = new DAOConcert();
                     ArrayList<Concert> live_list = new ArrayList<Concert>();
+
+
+                    DAOSpectacle Spec = new DAOSpectacle();
+                    ArrayList<Spectacle> spectacle = new ArrayList<Spectacle>();
+
                     try {
                       live_list = lives.findAll();
+                      spectacle = Spec.findAll();
                     } catch (Exception e) {
                       e.printStackTrace();
                     }
 
                     for (Concert value : live_list) {
-                      out.println(value.getTitre());
-                      out.println(value.getInterprete());
-                      out.println(value.getDescriptif());%>
-                <br>
-                <%
+                      for(Spectacle value2 : spectacle)
+                      {
+                        if(value2.getConcert().getTitre().equals(value.getTitre())) {
+                          if (value2.getSalle().getNumero() == 1) {
+                            if(value2.getDate().equals("2015-06-03")) {
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                          }
+                        }
+                      }
                     }
 
 
@@ -252,6 +348,7 @@
                   }
 
                 %>
+                <br>
               </p>
             </li>
           </div>
