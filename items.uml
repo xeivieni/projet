@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>items</OriginalElement>
+  <nodes>
+    <node x="0.0" y="148.0">items.Festival</node>
+    <node x="0.0" y="74.0">items.Spectacle</node>
+    <node x="0.0" y="222.0">items.Salle</node>
+    <node x="125.0" y="148.0">items.Client</node>
+    <node x="0.0" y="0.0">items.Reservations</node>
+    <node x="136.0" y="74.0">items.Concert</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="108.5" y="125.5" />
+  <SelectedNodes>
+    <node>items.Festival</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

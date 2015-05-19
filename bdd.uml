@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>114d8e94-3d8d-47b5-8967-c02b30c103d7</OriginalElement>
+  <nodes>
+    <node x="0.0" y="0.0">114d8e94-3d8d-47b5-8967-c02b30c103d7.table:Projet.Spectacle</node>
+    <node x="0.0" y="414.0">114d8e94-3d8d-47b5-8967-c02b30c103d7.table:Projet.Clients</node>
+    <node x="232.0" y="207.0">114d8e94-3d8d-47b5-8967-c02b30c103d7.table:Projet.Concert</node>
+    <node x="0.0" y="207.0">114d8e94-3d8d-47b5-8967-c02b30c103d7.table:Projet.Resa</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.9018867924528302" x="215.0" y="255.0" />
+  <SelectedNodes>
+    <node>114d8e94-3d8d-47b5-8967-c02b30c103d7.table:Projet.Spectacle</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+
