@@ -17,7 +17,70 @@
     <title></title>
 </head>
 <body>
-<%
+
+<div class="jumbotron">
+  <div class="container">
+    <center>
+    <h1>Programme</h1>
+    </center>
+    <br>
+    <div class="row">
+      <div class="col-md-1">
+        <div class="top-bg"></div>
+      </div>
+
+      <div class="col-md-5 iPhone-features" style="margin-left:-25px;">
+        <%--<ul class="top-features">--%>
+          <div align="left">
+           <p><u><H2>Scène 1</H2></u></p><br>
+
+            <li>
+              <span><i class="fa fa-random simple_bg top-features-bg"></i></span>
+              <p><strong>Jour 1</strong><br>Spectacle 1</p>
+            </li>
+            <li>
+              <span><i class="fa fa-cogs simple_bg top-features-bg"></i></span>
+              <p><strong>Jour 2</strong><br>Spectacle 2</p>
+            </li>
+            <li>
+              <span><i class="fa fa-check simple_bg top-features-bg"></i></span>
+              <p><strong>Jour 3</strong><br>Spectacle 3</p>
+            </li>
+          </div>
+        <%--</ul>--%>
+      </div>
+
+
+      <div class="col-md-3">
+        <div class="top-bg"></div>
+      </div>
+      <div class="col-md-5 iPhone-features" style="margin-right:-25px;">
+        <%--<ul class="top-features">--%>
+          <div align="right">
+            <p><u><H2>Scène 2</H2></u></p><br>
+
+            <li>
+              <span><i class="fa fa-random simple_bg top-features-bg"></i></span>
+              <p><strong>Jour 1</strong><br>Spectacle 1</p>
+            </li>
+            <li>
+              <span><i class="fa fa-cogs simple_bg top-features-bg"></i></span>
+              <p><strong>Jour 2</strong><br>Spectacle 2</p>
+            </li>
+            <li>
+              <span><i class="fa fa-check simple_bg top-features-bg"></i></span>
+              <p><strong>Jour 3</strong><br>Spectacle 3</p>
+            </li>
+          </div>
+        <%--</ul>--%>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<%-- <%
 
 
   try {
@@ -42,6 +105,6 @@
     out.print("Aie aie aie2");
   }
 
-%>
+%> --%>
 </body>
 </html>
