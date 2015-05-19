@@ -11,6 +11,8 @@ public class Spectacle {
     public int nbPlacesDT;
     public int nbPlacesVIP;
 
+    public Spectacle(){}
+
     public Spectacle(Salle salle, Concert concert, String date, int PT,  int DT, int VIP){
         this.salle = salle;
         this.concert = concert;

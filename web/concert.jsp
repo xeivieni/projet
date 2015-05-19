@@ -2,6 +2,9 @@
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="items.Concert" %>
+<%@ page import="DAO.DAOSpectacle" %>
+<%@ page import="items.Spectacle" %>
+<%@ page import="items.Salle" %>
 <%--
   Created by IntelliJ IDEA.
   User: clementmondion
@@ -18,7 +21,7 @@
 </head>
 <body>
 
-<div class="jumbotron">
+
   <div class="container">
     <center>
     <h1>Programme</h1>
@@ -36,15 +39,108 @@
 
             <li>
               <span><i class="fa fa-random simple_bg top-features-bg"></i></span>
-              <p><strong>Jour 1</strong><br>Spectacle 1</p>
+              <p><strong>Jour 1</strong><br>
+                <%
+                  try {
+                    DAOConcert lives = new DAOConcert();
+                    ArrayList<Concert> live_list = new ArrayList<Concert>();
+
+
+                    DAOSpectacle Spec = new DAOSpectacle();
+                    ArrayList<Spectacle> spectacle = new ArrayList<Spectacle>();
+
+                    try {
+                      live_list = lives.findAll();
+                      spectacle = Spec.findAll();
+                    } catch (Exception e) {
+                      e.printStackTrace();
+                    }
+
+                    for (Concert value : live_list) {
+                      out.println(value.getTitre());
+                      out.println(value.getInterprete());
+                      out.println(value.getDescriptif());%>
+                <br>
+                <%
+                    }
+
+
+                  } catch (SQLException e) {
+                    e.printStackTrace();
+                    out.print("Aie aie aie");
+                  } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                    out.print("Aie aie aie2");
+                  }
+
+                %>
+              </p>
             </li>
             <li>
               <span><i class="fa fa-cogs simple_bg top-features-bg"></i></span>
-              <p><strong>Jour 2</strong><br>Spectacle 2</p>
+              <p><strong>Jour 2</strong><br>
+                <%
+                  try {
+                    DAOConcert lives = new DAOConcert();
+                    ArrayList<Concert> live_list = new ArrayList<Concert>();
+                    try {
+                      live_list = lives.findAll();
+                    } catch (Exception e) {
+                      e.printStackTrace();
+                    }
+
+                    for (Concert value : live_list) {
+                      out.println(value.getTitre());
+                      out.println(value.getInterprete());
+                      out.println(value.getDescriptif());%>
+                <br>
+                <%
+                    }
+
+
+                  } catch (SQLException e) {
+                    e.printStackTrace();
+                    out.print("Aie aie aie");
+                  } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                    out.print("Aie aie aie2");
+                  }
+
+                %>
+              </p>
             </li>
             <li>
               <span><i class="fa fa-check simple_bg top-features-bg"></i></span>
-              <p><strong>Jour 3</strong><br>Spectacle 3</p>
+              <p><strong>Jour 3</strong><br>
+                <%
+                  try {
+                    DAOConcert lives = new DAOConcert();
+                    ArrayList<Concert> live_list = new ArrayList<Concert>();
+                    try {
+                      live_list = lives.findAll();
+                    } catch (Exception e) {
+                      e.printStackTrace();
+                    }
+
+                    for (Concert value : live_list) {
+                      out.println(value.getTitre());
+                      out.println(value.getInterprete());
+                      out.println(value.getDescriptif());%>
+                <br>
+                <%
+                    }
+
+
+                  } catch (SQLException e) {
+                    e.printStackTrace();
+                    out.print("Aie aie aie");
+                  } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                    out.print("Aie aie aie2");
+                  }
+
+                %>
+              </p>
             </li>
           </div>
         <%--</ul>--%>
@@ -61,15 +157,102 @@
 
             <li>
               <span><i class="fa fa-random simple_bg top-features-bg"></i></span>
-              <p><strong>Jour 1</strong><br>Spectacle 1</p>
+              <p><strong>Jour 1</strong><br>
+                <%
+                  try {
+                    DAOConcert lives = new DAOConcert();
+                    ArrayList<Concert> live_list = new ArrayList<Concert>();
+                    try {
+                      live_list = lives.findAll();
+                    } catch (Exception e) {
+                      e.printStackTrace();
+                    }
+
+                    for (Concert value : live_list) {
+                      out.println(value.getTitre());
+                      out.println(value.getInterprete());
+                      out.println(value.getDescriptif());%>
+                <br>
+                <%
+                    }
+
+
+                  } catch (SQLException e) {
+                    e.printStackTrace();
+                    out.print("Aie aie aie");
+                  } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                    out.print("Aie aie aie2");
+                  }
+
+                %>
+              </p>
             </li>
             <li>
               <span><i class="fa fa-cogs simple_bg top-features-bg"></i></span>
-              <p><strong>Jour 2</strong><br>Spectacle 2</p>
+              <p><strong>Jour 2</strong><br>
+                <%
+                  try {
+                    DAOConcert lives = new DAOConcert();
+                    ArrayList<Concert> live_list = new ArrayList<Concert>();
+                    try {
+                      live_list = lives.findAll();
+                    } catch (Exception e) {
+                      e.printStackTrace();
+                    }
+
+                    for (Concert value : live_list) {
+                      out.println(value.getTitre());
+                      out.println(value.getInterprete());
+                      out.println(value.getDescriptif());%>
+                <br>
+                <%
+                    }
+
+
+                  } catch (SQLException e) {
+                    e.printStackTrace();
+                    out.print("Aie aie aie");
+                  } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                    out.print("Aie aie aie2");
+                  }
+
+                %>
+              </p>
             </li>
             <li>
               <span><i class="fa fa-check simple_bg top-features-bg"></i></span>
-              <p><strong>Jour 3</strong><br>Spectacle 3</p>
+              <p><strong>Jour 3</strong><br>
+                <%
+                  try {
+                    DAOConcert lives = new DAOConcert();
+                    ArrayList<Concert> live_list = new ArrayList<Concert>();
+                    try {
+                      live_list = lives.findAll();
+                    } catch (Exception e) {
+                      e.printStackTrace();
+                    }
+
+                    for (Concert value : live_list) {
+                      out.println(value.getTitre());
+                      out.println(value.getInterprete());
+                      out.println(value.getDescriptif());%>
+                <br>
+                <%
+                    }
+
+
+                  } catch (SQLException e) {
+                    e.printStackTrace();
+                    out.print("Aie aie aie");
+                  } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                    out.print("Aie aie aie2");
+                  }
+
+                %>
+              </p>
             </li>
           </div>
         <%--</ul>--%>
@@ -77,34 +260,6 @@
 
     </div>
   </div>
-</div>
 
-
-<%
-
-
-  try {
-    DAOConcert lives = new DAOConcert();
-    ArrayList<Concert> live_list = new ArrayList<Concert>();
-    try {
-      live_list = lives.findAll();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-
-    for (Concert value : live_list) {
-      out.println(value.getTitre());
-      out.println(value.getInterprete());
-      out.println(value.getDescriptif());
-    }
-  } catch (SQLException e) {
-    e.printStackTrace();
-    out.print("Aie aie aie");
-  } catch (ClassNotFoundException e) {
-    e.printStackTrace();
-    out.print("Aie aie aie2");
-  }
-
-%>
 </body>
 </html>
