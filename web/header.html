@@ -1,4 +1,3 @@
-
 <head>
     <title>SETI'VAL 2015</title>
 </head>
@@ -7,18 +6,14 @@
 <html lang="en">
 <head>
 
-    <!--<style>
-        html{background: url("/image.jpg") no-repeat center center fixed;
-            background-size: cover;}
-    </style>-->
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!--<link href="ressources/css/custom.css" rel="stylesheet">-->
 
     <!-- Bootstrap -->
-    <!--<link href="ressources/css/agency.css" rel="stylesheet">-->
     <link href="ressources/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -55,54 +50,94 @@
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
-            <ul class="nav navbar-nav navbar-right">
+
+
+            <div class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span
                             class="glyphicon glyphicon-user"></span> Profile <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="authentification.jsp">Client</a></li>
-                        <li><a href="admin.jsp">Admin</a></li>
+                        <li><a type="submit">Client</a></li>
+                        <li><a type="submit">Admin</a></li>
                         <li class="divider"></li>
                         <li><a href="#new" data-toggle="modal">Nouveau client</a></li>
                     </ul>
                 </li>
-            </ul>
+            </div>
         </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container-fluid -->
 </nav>
 <div class="modal fade" id="new" role="dialog">
-     <div class="modal-dialog">
-         <div class="modal-content">
-             <div class="modal-header">
-                 <div class="container">
-                     <div class="container">
-                         <div class="card card-container">
-                             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-                             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-                             <p id="profile-name" class="profile-name-card"></p>
-                             <form class="form-signin">
-                                 <span id="reauth-email" class="reauth-email"></span>
-                                 <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                                 <div id="remember" class="checkbox">
-                                     <label>
-                                         <input type="checkbox" value="remember-me"> Remember me
-                                     </label>
-                                 </div>
-                                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
-                             </form><!-- /form -->
-                             <a href="#" class="forgot-password">
-                                 Forgot the password?
-                             </a>
-                         </div><!-- /card-container -->
-                     </div><!-- /container -->                 </div><!-- /container -->
-             </div>
-         </div>
-     </div>
-</div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Inscription</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    Vous êtes ?
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Un homme
+                        </label>
+                    </div> <!-- /.checkbox -->
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Une femme
+                        </label>
+                    </div> <!-- /.checkbox -->
 
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="uName" placeholder="Nom">
+                            <label for="uName" class="input-group-addon glyphicon glyphicon-user"></label>
+                        </div>
+                    </div> <!-- /.form-group -->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="uSurname" placeholder="Prenom">
+                            <label for="uSurname" class="input-group-addon glyphicon glyphicon-user"></label>
+                        </div>
+                    </div> <!-- /.form-group -->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="uLogin" placeholder="Nom d'utilisateur">
+                            <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+                        </div>
+                    </div> <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="email" class="form-control" id="uMail" placeholder="Adresse e-mail">
+                            <label for="uMail" class="input-group-addon glyphicon glyphicon-envelope"></label>
+                        </div>
+                    </div> <!-- /.form-group -->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="uPassword" placeholder="Mot de passe">
+                            <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+                        </div> <!-- /.input-group -->
+                    </div> <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="uPassword-retype" placeholder="Confirmation du mot de passe">
+                            <label for="uPassword-retype" class="input-group-addon glyphicon glyphicon-lock"></label>
+                        </div> <!-- /.input-group -->
+                    </div> <!-- /.form-group -->
+
+                </form>
+
+            </div> <!-- /.modal-body -->
+
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -110,7 +145,5 @@
 <script src="ressources/js/bootstrap.min.js"></script>
 <script src="ressources/js/agency.js"></script>
 <script src="ressources/js/jquery.js"></script>
-
-
 </body>
 </html>
