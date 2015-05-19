@@ -6,12 +6,12 @@ import java.util.Date;
 public class Spectacle {
     public Salle salle;
     public Concert concert;
-    public java.util.Date date;
+    public String date;
     public int nbPlacesPT;
     public int nbPlacesDT;
     public int nbPlacesVIP;
 
-    public Spectacle(Salle salle, Concert concert, Date date, int PT,  int DT, int VIP){
+    public Spectacle(Salle salle, Concert concert, String date, int PT,  int DT, int VIP){
         this.salle = salle;
         this.concert = concert;
         this.date = date;
@@ -36,7 +36,7 @@ public class Spectacle {
         this.concert = concert;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -60,7 +60,7 @@ public class Spectacle {
         return concert;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 

@@ -29,7 +29,7 @@ public class DAOSpectacle {
         while (rs.next()){
             String name = rs.getString("nom");
             if (name.equals(nom)){
-                monSpectacle = new Spectacle(new Salle(rs.getInt("Salle")), monDAOConcert.retrieve(nom), rs.getDate("Date"),
+                monSpectacle = new Spectacle(new Salle(rs.getInt("Salle")), monDAOConcert.retrieve(nom), rs.getDate("Date").toString(),
                         rs.getInt("nbPT"), rs.getInt("nbDT"), rs.getInt("nbVIP"));
             }
         }
@@ -41,8 +41,8 @@ public class DAOSpectacle {
         Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
-        /*while (rs.next()){
-            java.sql.Date date = rs.getDate("Date");
+        while (rs.next()){
+            String date = rs.getString("Date");
             String titre = rs.getString("Titre");
             int salle = rs.getInt("Salle");
             int PT = rs.getInt("NbPT");
@@ -53,7 +53,7 @@ public class DAOSpectacle {
                 System.out.println("Le spectacle demandé existe déjà dans la base de donnée");
                 return;
             }
-        }*/
+        }
         /* Exécution d'une requête d'écriture */
         String statement = ("INSERT INTO `Spectacle` " +
                 "(`Date`, `Titre`, `Salle`, `NbPT`, `NbDT`, `NbVIP`) VALUES " +
@@ -107,7 +107,10 @@ public class DAOSpectacle {
         ResultSet rs;
         rs = stmt.executeQuery(rqst);
         while (rs.next()){
-            R.add((Spectacle)rs);
+            DAOConcert concert_from_titre = new DAOConcert();
+            Concert my_concert = concert_from_titre.retrieve(rs.getString("Titre"));
+            Spectacle live = new Spectacle(new Salle(rs.getInt("Salle")), my_concert, rs.getString("Date"), rs.getInt("NbPT"), rs.getInt("NbDT"), rs.getInt("NbVIP"));
+            R.add(live);
         }
         return R;
     }
