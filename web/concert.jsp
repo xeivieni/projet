@@ -57,27 +57,36 @@
                       {
                         if(value2.getConcert().getTitre().equals(value.getTitre())) {
                           if (value2.getSalle().getNumero() == 1) {
-                            if(value2.getDate().equals("2015-06-01_15"))
+                            if(value2.getDate().equals("2015-06-01_14"))
                             {
-                              out.println("15h - ");
+                              out.println("14h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
                               out.println(value.getDescriptif());
                               out.println("<br>");
                             }
-                            else if(value2.getDate().equals("2015-06-01_18"))
+                            else if(value2.getDate().equals("2015-06-01_17"))
                             {
-                              out.println("18h - ");
+                              out.println("17h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
                               out.println(value.getDescriptif());
                               out.println("<br>");
                             }
-                            else if(value2.getDate().equals("2015-06-01_21"))
+                            else if(value2.getDate().equals("2015-06-01_20"))
                             {
-                              out.println("21h - ");
+                              out.println("20h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-01_22"))
+                            {
+                              out.println("22h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
@@ -128,27 +137,36 @@
                       {
                         if(value2.getConcert().getTitre().equals(value.getTitre())) {
                           if (value2.getSalle().getNumero() == 1) {
-                            if(value2.getDate().equals("2015-06-02_15"))
+                            if(value2.getDate().equals("2015-06-02_14"))
                             {
-                              out.println("15h - ");
+                              out.println("14h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
                               out.println(value.getDescriptif());
                               out.println("<br>");
                             }
-                            else if(value2.getDate().equals("2015-06-02_18"))
+                            else if(value2.getDate().equals("2015-06-02_17"))
                             {
-                              out.println("18h - ");
+                              out.println("17h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
                               out.println(value.getDescriptif());
                               out.println("<br>");
                             }
-                            else if(value2.getDate().equals("2015-06-02_21"))
+                            else if(value2.getDate().equals("2015-06-02_20"))
                             {
-                              out.println("21h - ");
+                              out.println("20h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-02_22"))
+                            {
+                              out.println("22h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
@@ -198,27 +216,36 @@
                       {
                         if(value2.getConcert().getTitre().equals(value.getTitre())) {
                           if (value2.getSalle().getNumero() == 1) {
-                            if(value2.getDate().equals("2015-06-03_15"))
+                            if(value2.getDate().equals("2015-06-03_14"))
                             {
-                              out.println("15h - ");
+                              out.println("14h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
                               out.println(value.getDescriptif());
                               out.println("<br>");
                             }
-                            else if(value2.getDate().equals("2015-06-03_18"))
+                            else if(value2.getDate().equals("2015-06-03_17"))
                             {
-                              out.println("18h - ");
+                              out.println("17h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
                               out.println(value.getDescriptif());
                               out.println("<br>");
                             }
-                            else if(value2.getDate().equals("2015-06-03_21"))
+                            else if(value2.getDate().equals("2015-06-03_20"))
                             {
-                              out.println("21h - ");
+                              out.println("20h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-03_22"))
+                            {
+                              out.println("22h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
@@ -281,27 +308,36 @@
                       {
                         if(value2.getConcert().getTitre().equals(value.getTitre())) {
                           if (value2.getSalle().getNumero() == 2) {
-                            if(value2.getDate().equals("2015-06-01_15"))
+                            if(value2.getDate().equals("2015-06-01_14"))
                             {
-                              out.println("15h - ");
+                              out.println("14h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
                               out.println(value.getDescriptif());
                               out.println("<br>");
                             }
-                            else if(value2.getDate().equals("2015-06-01_18"))
+                            else if(value2.getDate().equals("2015-06-01_17"))
                             {
-                              out.println("18h - ");
+                              out.println("17h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
                               out.println(value.getDescriptif());
                               out.println("<br>");
                             }
-                            else if(value2.getDate().equals("2015-06-01_21"))
+                            else if(value2.getDate().equals("2015-06-01_20"))
                             {
-                              out.println("21h - ");
+                              out.println("20h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-01_22"))
+                            {
+                              out.println("22h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
@@ -351,27 +387,36 @@
                       {
                         if(value2.getConcert().getTitre().equals(value.getTitre())) {
                           if (value2.getSalle().getNumero() == 2) {
-                            if(value2.getDate().equals("2015-06-02_15"))
+                            if(value2.getDate().equals("2015-06-02_14"))
                             {
-                              out.println("15h - ");
+                              out.println("14h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
                               out.println(value.getDescriptif());
                               out.println("<br>");
                             }
-                            else if(value2.getDate().equals("2015-06-02_18"))
+                            else if(value2.getDate().equals("2015-06-02_17"))
                             {
-                              out.println("18h - ");
+                              out.println("17h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
                               out.println(value.getDescriptif());
                               out.println("<br>");
                             }
-                            else if(value2.getDate().equals("2015-06-02_21"))
+                            else if(value2.getDate().equals("2015-06-02_20"))
                             {
-                              out.println("21h - ");
+                              out.println("20h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-02_22"))
+                            {
+                              out.println("22h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
@@ -421,27 +466,36 @@
                       {
                         if(value2.getConcert().getTitre().equals(value.getTitre())) {
                           if (value2.getSalle().getNumero() == 2) {
-                            if(value2.getDate().equals("2015-06-03_15"))
+                            if(value2.getDate().equals("2015-06-03_14"))
                             {
-                              out.println("15h - ");
+                              out.println("14h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
                               out.println(value.getDescriptif());
                               out.println("<br>");
                             }
-                            else if(value2.getDate().equals("2015-06-03_18"))
+                            else if(value2.getDate().equals("2015-06-03_17"))
                             {
-                              out.println("18h - ");
+                              out.println("17h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
                               out.println(value.getDescriptif());
                               out.println("<br>");
                             }
-                            else if(value2.getDate().equals("2015-06-03_21"))
+                            else if(value2.getDate().equals("2015-06-03_20"))
                             {
-                              out.println("21h - ");
+                              out.println("20h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-03_22"))
+                            {
+                              out.println("22h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
