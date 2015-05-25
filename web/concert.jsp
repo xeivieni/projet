@@ -23,15 +23,11 @@
 
 
   <div class="container">
-    <center>
-    <h1>Programme</h1>
-    </center>
-    <br>
     <div class="row">
       <div class="col-md-1">
         <div class="top-bg"></div>
       </div>
-
+      <FONT COLOR="black" >
       <div class="col-md-5 iPhone-features" style="margin-left:-25px;">
         <%--<ul class="top-features">--%>
           <div align="left">
@@ -60,9 +56,28 @@
                       for(Spectacle value2 : spectacle)
                       {
                         if(value2.getConcert().getTitre().equals(value.getTitre())) {
-                          if (value2.getSalle().getNumero() == 0) {
-                            if(value2.getDate().equals("2015-06-01"))
+                          if (value2.getSalle().getNumero() == 1) {
+                            if(value2.getDate().equals("2015-06-01_15"))
                             {
+                              out.println("15h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-01_18"))
+                            {
+                              out.println("18h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-01_21"))
+                            {
+                              out.println("21h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
@@ -112,8 +127,28 @@
                       for(Spectacle value2 : spectacle)
                       {
                         if(value2.getConcert().getTitre().equals(value.getTitre())) {
-                          if (value2.getSalle().getNumero() == 0) {
-                            if(value2.getDate().equals("2015-06-02")) {
+                          if (value2.getSalle().getNumero() == 1) {
+                            if(value2.getDate().equals("2015-06-02_15"))
+                            {
+                              out.println("15h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-02_18"))
+                            {
+                              out.println("18h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-02_21"))
+                            {
+                              out.println("21h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
@@ -162,8 +197,28 @@
                       for(Spectacle value2 : spectacle)
                       {
                         if(value2.getConcert().getTitre().equals(value.getTitre())) {
-                          if (value2.getSalle().getNumero() == 0) {
-                            if(value2.getDate().equals("2015-06-03")) {
+                          if (value2.getSalle().getNumero() == 1) {
+                            if(value2.getDate().equals("2015-06-03_15"))
+                            {
+                              out.println("15h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-03_18"))
+                            {
+                              out.println("18h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-03_21"))
+                            {
+                              out.println("21h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
@@ -225,8 +280,28 @@
                       for(Spectacle value2 : spectacle)
                       {
                         if(value2.getConcert().getTitre().equals(value.getTitre())) {
-                          if (value2.getSalle().getNumero() == 1) {
-                            if(value2.getDate().equals("2015-06-01")) {
+                          if (value2.getSalle().getNumero() == 2) {
+                            if(value2.getDate().equals("2015-06-01_15"))
+                            {
+                              out.println("15h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-01_18"))
+                            {
+                              out.println("18h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-01_21"))
+                            {
+                              out.println("21h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
@@ -275,8 +350,28 @@
                       for(Spectacle value2 : spectacle)
                       {
                         if(value2.getConcert().getTitre().equals(value.getTitre())) {
-                          if (value2.getSalle().getNumero() == 1) {
-                            if(value2.getDate().equals("2015-06-02")) {
+                          if (value2.getSalle().getNumero() == 2) {
+                            if(value2.getDate().equals("2015-06-02_15"))
+                            {
+                              out.println("15h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-02_18"))
+                            {
+                              out.println("18h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-02_21"))
+                            {
+                              out.println("21h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
@@ -325,8 +420,28 @@
                       for(Spectacle value2 : spectacle)
                       {
                         if(value2.getConcert().getTitre().equals(value.getTitre())) {
-                          if (value2.getSalle().getNumero() == 1) {
-                            if(value2.getDate().equals("2015-06-03")) {
+                          if (value2.getSalle().getNumero() == 2) {
+                            if(value2.getDate().equals("2015-06-03_15"))
+                            {
+                              out.println("15h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-03_18"))
+                            {
+                              out.println("18h - ");
+                              out.println(value.getTitre());
+                              out.println(value.getInterprete());
+                              out.println("-");
+                              out.println(value.getDescriptif());
+                              out.println("<br>");
+                            }
+                            else if(value2.getDate().equals("2015-06-03_21"))
+                            {
+                              out.println("21h - ");
                               out.println(value.getTitre());
                               out.println(value.getInterprete());
                               out.println("-");
@@ -354,7 +469,7 @@
           </div>
         <%--</ul>--%>
       </div>
-
+      </FONT>
     </div>
   </div>
 

@@ -36,6 +36,29 @@ public class DAOSpectacle {
         return monSpectacle;
     }
 
+    public String retrieve_titre(String heure, String salle, String jour) throws SQLException, ClassNotFoundException {
+
+        String title = null;
+        String rqst = "SELECT * FROM Spectacle";
+        Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        ResultSet rs;
+        rs = stmt.executeQuery(rqst);
+
+        while (rs.next()){
+            String date = rs.getString("Date");
+            String S = rs.getString("Salle");
+
+            if (date.equals(jour+heure)){
+                if(S.equals(salle))
+                {
+                    title = rs.getString("Titre");
+                }
+
+            }
+        }
+        return title;
+    }
+
     public void create(Spectacle spectacle) throws SQLException{
         String rqst = "SELECT * FROM Spectacle";
         Statement stmt = dbcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);

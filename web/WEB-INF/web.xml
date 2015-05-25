@@ -8,6 +8,15 @@
         <servlet-name>authentification</servlet-name>
         <jsp-file>authentification.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>Servlet_reservation</servlet-name>
+        <servlet-class>items.Servlet_reservation</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Servlet_reservation</servlet-name>
+        <url-pattern>/Servlet_reservation</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>authentification</servlet-name>

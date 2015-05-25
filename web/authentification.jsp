@@ -4,6 +4,7 @@
 
 <header><jsp:include page="header.html"/></header>
 <header>
+
 <div class="container">
     <div class="intro-text">
         <div class="intro-lead-in">Welcome To Our Studio!</div>
