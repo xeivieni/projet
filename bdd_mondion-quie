@@ -54,7 +54,7 @@ INSERT INTO `Concert` (`Titre`, `Interprete`, `Descriptif`) VALUES
 ('Titre 17', 'Auteur 17', 'Concert 17'),
 ('Titre 18', 'Auteur 18', 'Concert 18'),
 ('Titre 19', 'Auteur 19', 'Concert 19'),
-('Titre 2', 'Artiste 2', 'Concert 2'),
+('Titre 2', 'Auteur 2', 'Concert 2'),
 ('Titre 20', 'Auteur 20', 'Concert 20'),
 ('Titre 21', 'Auteur 21', 'Concert 21'),
 ('Titre 22', 'Auteur 22', 'Concert 22'),
