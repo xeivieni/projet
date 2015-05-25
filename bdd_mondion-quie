@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost:8889
--- Généré le :  Mar 12 Mai 2015 à 13:29
+-- Généré le :  Lun 25 Mai 2015 à 11:01
 -- Version du serveur :  5.5.42
 -- Version de PHP :  5.6.7
 
@@ -38,6 +38,36 @@ CREATE TABLE `Concert` (
   `Descriptif` varchar(140) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Contenu de la table `Concert`
+--
+
+INSERT INTO `Concert` (`Titre`, `Interprete`, `Descriptif`) VALUES
+('Titre 1', 'Artiste 1', 'Concert 1'),
+('Titre 10', 'Auteur 10', 'Concert 10'),
+('Titre 11', 'Auteur 11', 'Concert 11'),
+('Titre 12', 'Auteur 12', 'Concert 12'),
+('Titre 13', 'Auteur 13', 'Concert 13'),
+('Titre 14', 'Auteur 14', 'Concert 14'),
+('Titre 15', 'Auteur 15', 'Concert 15'),
+('Titre 16', 'Auteur 16', 'Concert 16'),
+('Titre 17', 'Auteur 17', 'Concert 17'),
+('Titre 18', 'Auteur 18', 'Concert 18'),
+('Titre 19', 'Auteur 19', 'Concert 19'),
+('Titre 2', 'Artiste 2', 'Concert 2'),
+('Titre 20', 'Auteur 20', 'Concert 20'),
+('Titre 21', 'Auteur 21', 'Concert 21'),
+('Titre 22', 'Auteur 22', 'Concert 22'),
+('Titre 23', 'Auteur 23', 'Concert 23'),
+('Titre 24', 'Auteur 24', 'Concert 24'),
+('Titre 3', 'Artiste 3', 'Concert 3'),
+('Titre 4', 'Artiste 4', 'Concert 4'),
+('Titre 5', 'Artiste 5', 'Concert 5'),
+('Titre 6', 'Auteur 6', 'Concert 6'),
+('Titre 7', 'Auteur 7', 'Concert 7'),
+('Titre 8', 'Auteur 8', 'Concert 8'),
+('Titre 9', 'Auteur 9', 'Concert 9');
+
 -- --------------------------------------------------------
 
 --
@@ -60,13 +90,43 @@ CREATE TABLE `Resa` (
 --
 
 CREATE TABLE `Spectacle` (
-  `Date` date NOT NULL,
+  `Date` varchar(30) NOT NULL,
   `Titre` varchar(30) CHARACTER SET utf8 NOT NULL,
   `Salle` int(11) NOT NULL,
   `NbPT` int(11) NOT NULL,
   `NbDT` int(11) NOT NULL,
   `NbVIP` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `Spectacle`
+--
+
+INSERT INTO `Spectacle` (`Date`, `Titre`, `Salle`, `NbPT`, `NbDT`, `NbVIP`) VALUES
+('2015-06-01_14', 'Titre 1', 2, 101, 3, 0),
+('2015-06-02_20', 'Titre 10', 1, 110, 33, 33),
+('2015-06-03_17', 'Titre 11', 1, 111, 33, 33),
+('2015-06-03_20', 'Titre 12', 1, 112, 33, 33),
+('2015-06-01_17', 'Titre 13', 2, 113, 33, 33),
+('2015-06-01_20', 'Titre 14', 2, 114, 33, 33),
+('2015-06-02_17', 'Titre 15', 2, 115, 33, 33),
+('2015-06-02_20', 'Titre 16', 2, 116, 33, 33),
+('2015-06-03_17', 'Titre 17', 2, 117, 33, 33),
+('2015-06-03_20', 'Titre 18', 2, 118, 33, 33),
+('2015-06-01_22', 'Titre 19', 1, 119, 22, 11),
+('2015-06-01_14', 'Titre 2', 1, 102, 21, 0),
+('2015-06-01_22', 'Titre 20', 2, 120, 22, 11),
+('2015-06-02_22', 'Titre 21', 1, 121, 22, 11),
+('2015-06-02_22', 'Titre 22', 2, 122, 22, 11),
+('2015-06-03_22', 'Titre 23', 1, 123, 22, 11),
+('2015-06-03_22', 'Titre 24', 2, 124, 22, 11),
+('2015-06-02_14', 'Titre 3', 1, 103, 20, 10),
+('2015-06-02_14', 'Titre 4', 2, 104, 20, 10),
+('2015-06-03_14', 'Titre 5', 2, 105, 20, 10),
+('2015-06-03_14', 'Titre 6', 1, 106, 43, 3),
+('2015-06-01_17', 'Titre 7', 1, 107, 33, 33),
+('2015-06-01_20', 'Titre 8', 1, 108, 33, 33),
+('2015-06-02_17', 'Titre 9', 1, 109, 33, 33);
 
 --
 -- Index pour les tables exportées
